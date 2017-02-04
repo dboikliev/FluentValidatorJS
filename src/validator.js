@@ -10,7 +10,6 @@ class Rule {
     }
 
     defined() {
-        console.log(this);
         this.addRule({ name: "defined", validator: value => value != undefined });
         return this;
     }
