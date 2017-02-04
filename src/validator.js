@@ -5,22 +5,24 @@ class Rule {
     }
 
     custom({ name, validator }) {
-        this.rules.push({ name: name, validator: validator });
+        this.addRule({ name: name, validator: validator });
         return this;
     }
 
     defined() {
-        this.rules.push({ name: "defined", validator: value => value != undefined });
+        console.log(this);
+        this.addRule({ name: "defined", validator: value => value != undefined });
         return this;
     }
 
     minLength(min) {
-        this.rules.push({ name: "minLength", validator: value => value && value.length >= min });
+        this.addRule({ name: "minLength", validator: value => value && value.length >= min });
         return this;
     }
 
     regex(regularExpression) {
-        this.rules.push({ name: "regex", validator: value => value && value.match(/^[\d+]{9}$/)})
+        this.addRule({ name: "regex", validator: value => value && value.match(/^[\d+]{9}$/)})
+        return this;
     }
 
     withHandlers(validationHandlers) {
@@ -37,8 +39,23 @@ class Rule {
             }
         }
     }
+
+    addRule({ name, validator }) {
+        this.rules.push({ name: name, validator: validator });
+    }
+
+    static register({ name, validator }) {
+        Rule.prototype[name] = function () {
+            this.addRule({ name: name, validator: value => validator(value) })
+            return this;
+        };
+    }
 }
 
 function rule() {
     return new Rule();
+}
+
+function register({ name, validator }) {
+    Rule.register({ name: "startWithA", validator: value => value && value.startsWith("A")})
 }

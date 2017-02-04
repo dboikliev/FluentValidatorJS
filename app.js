@@ -6,10 +6,12 @@ require(["src/validator"], function() {
 
     }
 
+    register({ name: "startWithA", validator: value => value && value.startsWith("A")});
+
     var result = rule()
         .defined()
         .minLength(3)
-        .custom({ name: "startWithA", validator: value => value && value.startsWith("A")})
+        .startWithA()
         .withHandlers({
             defined: property => console.log(`${ property } is required.`),
             minLength: property => console.log(`${ property } be at least 50 symbols long.`),
