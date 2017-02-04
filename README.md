@@ -1,5 +1,5 @@
 # FluentValidatorJS
-A small library providing fluent syntax for validation object properties.
+A small library providing fluent syntax for validation of object properties.
 
 ###Example:
 
