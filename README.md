@@ -10,7 +10,6 @@ let person = {
     firstName: "Ivan",
     middleName: undefined,
     lastName: "Ivanov"
-
 }
 
 var result = rule()
