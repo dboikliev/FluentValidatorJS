@@ -57,7 +57,7 @@ var result = rule()
 ```
 
 ####Result: 
-The same result as the first example but know the startsWithA rule can be reused.
+The same result as the first example but now the startsWithA rule can be reused.
 
 ```
 firstName must start with A.
