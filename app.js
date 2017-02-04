@@ -3,7 +3,6 @@ require(["src/validator"], function() {
         firstName: "Ivan",
         middleName: undefined,
         lastName: "Ivanov"
-
     }
 
     register({ name: "startWithA", validator: value => value && value.startsWith("A")});
