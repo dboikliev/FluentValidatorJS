@@ -2,6 +2,9 @@
 A small library providing fluent syntax for validation object properties.
 
 ###Example:
+
+####Validation:
+
 ```javascript
 let person = {
     firstName: "Ivan",
@@ -20,4 +23,14 @@ var result = rule()
         startWithA: property => console.log(`${ property } must start with A.`)
     })
     .validate(person);
+```
+
+####Result:
+
+```
+firstName must start with A.
+middleName is required.
+middleName be at least 50 symbols long.
+middleName must start with A.
+lastName must start with A.
 ```
