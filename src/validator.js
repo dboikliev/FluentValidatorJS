@@ -20,7 +20,7 @@ class Rule {
     }
 
     regex(regularExpression) {
-        this.addRule({ name: "regex", validator: value => value && value.match(regularExpression)})
+        this.addRule({ name: "regex", validator: value => value && value.match(regularExpression) })
         return this;
     }
 
