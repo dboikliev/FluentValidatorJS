@@ -20,7 +20,7 @@ class Rule {
     }
 
     regex(regularExpression) {
-        this.addRule({ name: "regex", validator: value => value && value.match(/^[\d+]{9}$/)})
+        this.addRule({ name: "regex", validator: value => value && value.match(regularExpression)})
         return this;
     }
 
