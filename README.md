@@ -1,9 +1,9 @@
 # FluentValidatorJS
 A small library providing fluent syntax for validation of object properties.
 
-###Example:
+### Example:
 
-####1. Validation:
+#### 1. Validation:
 
 ```javascript
 let person = {
@@ -24,7 +24,7 @@ var result = rule()
     .validate(person);
 ```
 
-####Result:
+#### Result:
 
 ```
 firstName must start with A.
@@ -34,7 +34,7 @@ middleName must start with A.
 lastName must start with A.
 ```
 
-####2. Custom rule registration:
+#### 2. Custom rule registration:
 ```javascript
 let person = {
     firstName: "Ivan",
@@ -56,7 +56,7 @@ var result = rule()
     .validate(person);
 ```
 
-####Result: 
+#### Result: 
 The same result as the first example but now the startsWithA rule can be reused.
 
 ```
